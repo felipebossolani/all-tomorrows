@@ -48,3 +48,5 @@ The extensor adjustment is implemented and validated by exhaustive state search.
 Requirements and technical design describe the same terminal-module support rule. The execution plan owns completion status.
 This organization borrows common repository/harness conventions; it does not claim
 compliance with a specific external framework.
+
+[Opening concept](product/opening-concept.md) registra a amostra isolada de Worms em `/concept.html`, em avaliação antes de ampliar a campanha.

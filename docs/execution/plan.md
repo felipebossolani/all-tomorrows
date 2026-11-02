@@ -100,3 +100,21 @@ Modelos iniciais confirmados pelo Orca: gpt-5.6-terra/high em ambos os executore
 Validação final local da v0.2: build, lint, Prettier, 21 testes de domínio e 22
 testes Chromium/Firefox aprovados. Build de produção inspecionada em :4173,
 sem erros de página e painel de formas com altura total de 720 px.
+
+## Conceito inicial canônico — amostra para avaliação
+
+- [x] Limitar pesquisa aos Worms, com Star People e Qu como contexto.
+- [x] Examinar ilustração original e registrar limites da adaptação.
+- [x] Documentar proposta curta e critérios de avaliação.
+- [x] Criar cena isolada com movimento contínuo, escavação e controles completos.
+- [x] Validar build, testes e navegador; disponibilizar amostra sem substituir campanha.
+- [ ] Receber avaliação de Felipe antes de expandir espécies ou campanha.
+
+### Review da amostra inicial
+
+- Cena isolada `/concept.html`: movimento contínuo, escavação, colisão, três alimentos e abrigo, conclusão e reinício. Teclado e mouse independentes.
+- Referência original de Worms examinada; conceito e separação entre cânone e adaptação em [opening-concept.md](../product/opening-concept.md).
+- Build, lint, formatação, 21 testes de domínio e 28 testes de navegador aprovados, incluindo seis novos casos Chromium/Firefox.
+- Build de produção inspecionada em 1280×720: controles visíveis, altura total de 720 px, nenhum erro de página. Captura local em `/tmp/opening-concept-final.png`.
+- Campanha v0.2 preservada. Sem novas dependências de aplicação, persistência ou espécies adicionais. Formas continuam provisórias; arte final fiel e avaliação de diversão permanecem pendentes.
+- Implementação desta amostra feita pelo coordenador Codex; nenhum worker lançado neste recorte delimitado.

@@ -40,3 +40,24 @@ Updated: 2026-11-02
 
 - Padrão: uma mecânica abstrata de montagem e o nome da obra não bastam para um fã reconhecer a inspiração.
 - Regra: expressar cooperação, unidades especializadas e transformação do corpo nas situações, reações e objetivos; separar explicitamente cenas originais de fatos do livro. Não tentar resolver ausência de propósito só com arte.
+
+## 2026-11-02 — Personagens e sequência reconhecíveis
+
+- Correção: o jogador gostou do layout, mas não reconheceu Lio; Felipe quer progressão incremental na sequência do livro, com personagens reais da obra.
+- Padrão: inventar Lio e Nara para dar propósito à cooperação enfraqueceu a identificação com All Tomorrows.
+- Regra: usar espécies e eventos canônicos verificados como base da progressão; não apresentar personagens inventados como pertencentes ao livro. Distinguir ordem dos capítulos, cronologia e linhagens evolutivas. Manter a apresentação aprovada e definir a adaptação antes de refazer a campanha.
+
+## 2026-11-02 — Não transferir coleta em massa ao usuário
+
+- Correção: pedir PDFs individuais de uma wiki com muitas páginas cria trabalho manual desnecessário para Felipe.
+- Regra: investigar API e fontes consultáveis em lote; usar o livro como fonte primária e resultados indexados como apoio identificado. Pedir ajuda apenas para material indispensável que não seja acessível por esses meios. Não alegar leitura completa a partir de snippets.
+
+## 2026-11-02 — Validar o começo antes de ampliar
+
+- Correção: nesta etapa, pesquisar apenas as espécies iniciais necessárias para fechar o conceito com Felipe.
+- Regra: limitar pesquisa e protótipo ao começo da experiência; validar reconhecimento da obra, fluidez e diversão antes de ampliar elenco, arte ou campanha. Não transformar acesso à wiki em levantamento completo como pré-requisito.
+
+## 2026-11-02 — Executar antes de prometer retorno
+
+- Correção: uma resposta encerrada prometendo voltar não inicia trabalho em segundo plano.
+- Regra: iniciar ferramentas e produzir o resultado autorizado na mesma execução; nunca sugerir que há trabalho ativo quando a sessão foi encerrada.
