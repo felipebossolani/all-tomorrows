@@ -18,6 +18,19 @@ const world = (position: Point, module: Point): Point => ({
 const core = { x: 0, y: 0 };
 const kinds = ["foot", "claw", "eye", "extender"] as const;
 
+function objectiveFor(level: Level): NonNullable<Level["objective"]> {
+  return (
+    level.objective ?? {
+      type: "deliver",
+      title: "Leve a semente",
+      description: "Leve a semente ao berço.",
+      itemLabel: "semente",
+      destinationLabel: "berço",
+      success: "Semente entregue!",
+    }
+  );
+}
+
 function free(level: Level, state: State, point: Point): boolean {
   return (
     level.map[point.y]?.[point.x] === "." &&
@@ -96,16 +109,25 @@ export function validateAssembly(
 
 export function targets(level: Level, state: State): Target[] {
   if (state.delivered) return [];
+  const objective = objectiveFor(level);
   const claws = state.modules
     .filter((module) => module.kind === "claw")
     .map((module) => world(state.position, module));
   const reachable = (point: Point) =>
     free(level, state, point) && claws.some((claw) => adjacent(claw, point));
   const result: Target[] = [];
-  if (!state.carrying && reachable(level.seed))
-    result.push({ ...level.seed, id: "seed", label: "Pegar semente" });
-  if (state.carrying && reachable(level.nest))
-    result.push({ ...level.nest, id: "nest", label: "Entregar semente" });
+  if (objective.type === "deliver" && !state.carrying && reachable(level.seed))
+    result.push({
+      ...level.seed,
+      id: "seed",
+      label: `Pegar ${objective.itemLabel}`,
+    });
+  if (objective.type === "deliver" && state.carrying && reachable(level.nest))
+    result.push({
+      ...level.nest,
+      id: "nest",
+      label: `Entregar em ${objective.destinationLabel}`,
+    });
   for (const item of level.switches) {
     if (
       !state.opened.includes(item.id) &&
@@ -116,7 +138,12 @@ export function targets(level: Level, state: State): Target[] {
         x: item.x,
         y: item.y,
         id: item.id,
-        label: item.hidden ? "Acionar símbolo revelado" : "Acionar interruptor",
+        label:
+          objective.type === "activate" && item.id === objective.switchId
+            ? `Ativar ${objective.destinationLabel}`
+            : item.hidden
+              ? "Acionar símbolo revelado"
+              : "Acionar interruptor",
       });
   }
   return result;
@@ -128,8 +155,9 @@ export function transition(
   command: Command,
 ): Result {
   const fail = (reason: string): Result => ({ ok: false, reason });
+  const objective = objectiveFor(level);
   if (state.delivered)
-    return fail("Semente entregue! Avance ou desfaça a última ação.");
+    return fail("Objetivo concluído! Avance ou desfaça a última ação.");
   if (!command || typeof command !== "object") return fail("Comando inválido.");
   if (command.type === "assemble") {
     const reason = validateAssembly(level, state, command.modules);
@@ -162,7 +190,17 @@ export function transition(
       )
     )
       return fail("O corpo não cabe: caminho bloqueado.");
-    return { ok: true, state: { ...state, position } };
+    return {
+      ok: true,
+      state: {
+        ...state,
+        position,
+        delivered:
+          objective.type === "arrive" &&
+          objective.at !== undefined &&
+          same(position, objective.at),
+      },
+    };
   }
   if (command.type === "interact") {
     if (!targets(level, state).some((target) => target.id === command.target))
@@ -178,7 +216,13 @@ export function transition(
       };
     return {
       ok: true,
-      state: { ...state, opened: [...state.opened, command.target].sort() },
+      state: {
+        ...state,
+        opened: [...state.opened, command.target].sort(),
+        delivered:
+          objective.type === "activate" &&
+          command.target === objective.switchId,
+      },
     };
   }
   return fail("Comando inválido.");

@@ -62,6 +62,14 @@ function key(state: State): string {
   ]);
 }
 
+function assemblyKey(modules: Module[]): string {
+  return JSON.stringify(
+    [...modules].sort(
+      (a, b) => a.x - b.x || a.y - b.y || a.kind.localeCompare(b.kind),
+    ),
+  );
+}
+
 function explore(level: Level, reassemble: boolean) {
   const bodies = assemblies(level);
   const queue: State[] = [];
@@ -122,8 +130,50 @@ function explore(level: Level, reassemble: boolean) {
 }
 
 describe("campanha", () => {
+  it("Should_StartEveryRoomWithALegalMobileBodyAndUsablePresets", () => {
+    for (const level of levels) {
+      const state = initialState(level);
+      expect(state.modules.some((module) => module.kind === "foot")).toBe(true);
+      expect(
+        moves.some((command) => transition(level, state, command).ok),
+        `sala ${level.id} começa com um corpo móvel`,
+      ).toBe(true);
+      for (const preset of level.presets ?? []) {
+        expect(
+          level.stations.some(
+            (position) =>
+              validateAssembly(
+                level,
+                { ...state, position },
+                preset.modules,
+              ) === null,
+          ),
+          `preset ${preset.id} da sala ${level.id} cabe em uma estação`,
+        ).toBe(true);
+      }
+    }
+  });
+
+  it("Should_OfferDeliveryActivationAndArrivalObjectives", () => {
+    expect(new Set(levels.map((level) => level.objective?.type))).toEqual(
+      new Set(["deliver", "activate", "arrive"]),
+    );
+    for (const level of levels) {
+      for (const command of level.solution) {
+        if (command.type !== "assemble") continue;
+        expect(
+          level.presets?.some(
+            (preset) =>
+              assemblyKey(preset.modules) === assemblyKey(command.modules),
+          ),
+          `montagem da solução da sala ${level.id} corresponde a um preset`,
+        ).toBe(true);
+      }
+    }
+  });
+
   for (const level of levels) {
-    it(`Should_DeliverSeed_FromInitialState_Room${level.id}`, () => {
+    it(`Should_CompleteObjective_FromInitialState_Room${level.id}`, () => {
       let state = initialState(level);
       for (const [index, command] of level.solution.entries()) {
         const before = structuredClone(state);

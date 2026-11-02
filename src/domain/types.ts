@@ -28,6 +28,24 @@ export interface Level {
   initial: Module[];
   hints: [string, string];
   solution: Command[];
+  objective?: {
+    type: "deliver" | "activate" | "arrive";
+    title: string;
+    description: string;
+    itemLabel: string;
+    destinationLabel: string;
+    success: string;
+    at?: Point;
+    switchId?: string;
+  };
+  presets?: {
+    id: string;
+    name: string;
+    description: string;
+    modules: Module[];
+  }[];
+  companion?: { name: string; dialogue: string; position: Point };
+  intro?: string;
 }
 export interface State {
   position: Point;
