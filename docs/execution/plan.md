@@ -25,7 +25,7 @@ remoto apontavam para 6087285; acesso GitHub e npm verificado no Linux.
 - [x] Completar dicas, progresso local, som, apresentação e final.
 - [ ] Integrar arte aprovada com procedência documentada.
 - [x] Executar checks e validar Chromium e Firefox em 1280×720.
-- [ ] Publicar implementação em commits pequenos por Git e confirmar SHA remoto.
+- [x] Publicar implementação em commits pequenos por Git e confirmar SHA remoto (5b038ab na primeira publicação da v0.1.0).
 
 ## Review
 
