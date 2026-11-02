@@ -61,3 +61,9 @@ Updated: 2026-11-02
 
 - Correção: uma resposta encerrada prometendo voltar não inicia trabalho em segundo plano.
 - Regra: iniciar ferramentas e produzir o resultado autorizado na mesma execução; nunca sugerir que há trabalho ativo quando a sessão foi encerrada.
+
+## 2026-11-02 — Validar endereço de acesso remoto
+
+- Correção: a amostra abriu no Orca, mas o acesso remoto usado anteriormente falhou.
+- Diagnóstico: IP Tailscale respondeu 200; nome MagicDNS foi rejeitado pelo Vite com 403. O link entregue também usava endereço LAN.
+- Regra: testar IP e hostname Tailscale antes de entregar links remotos; configurar hosts explícitos e distinguir teste local de validação no dispositivo do usuário.
