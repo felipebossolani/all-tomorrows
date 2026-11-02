@@ -261,6 +261,124 @@ footer {
   max-height: calc(100vh - 340px);
   min-height: 245px;
 }
+.board .floor {
+  fill: #f5f1e5;
+  stroke: #e8e1d2;
+  stroke-width: 0.6;
+}
+.board .wall {
+  fill: #d2d1bf;
+}
+.board .wall-vein {
+  stroke: #b8beac;
+  stroke-width: 1;
+}
+.board .door rect {
+  fill: #ba9878;
+  stroke: #796e56;
+}
+.board .door path {
+  stroke: #e4d2b7;
+  stroke-width: 3;
+}
+.board .switch circle {
+  fill: #d9c888;
+  stroke: #526758;
+}
+.board .switch.opened circle {
+  fill: #739486;
+}
+.board .switch text {
+  fill: #304b45;
+  font-size: 17px;
+}
+.creature-halos {
+  fill: #ebe8e2;
+  stroke: #788f87;
+  stroke-width: 1.2;
+}
+.creature-joins {
+  fill: none;
+  stroke: #b8b2bf;
+  stroke-width: 19;
+  stroke-linecap: round;
+}
+.creature-core {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: breathe 2.8s ease-in-out infinite;
+}
+.carried-seed {
+  animation: seed-pulse 1.3s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.target-ring {
+  fill: none;
+  stroke: #bb654d;
+  stroke-width: 3;
+  stroke-dasharray: 6 3;
+  animation: target-pulse 1.1s ease-in-out infinite;
+}
+.companion {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: companion-breathe 3.2s ease-in-out infinite;
+}
+.companion.celebrate {
+  animation: wave 0.6s ease-in-out 3;
+}
+.room-bloom {
+  fill: #d8e5ce;
+  stroke: #638174;
+  stroke-width: 2;
+  animation: bloom 0.65s ease-out both;
+}
+.arrival-mark {
+  fill: none;
+  stroke: #789285;
+  stroke-width: 1.2;
+  opacity: 0.8;
+}
+.arrival-mark circle:first-child {
+  stroke-dasharray: 3 4;
+  animation: target-pulse 2s linear infinite;
+}
+@keyframes breathe {
+  50% {
+    transform: scale(1.045) translateY(-1px);
+  }
+}
+@keyframes seed-pulse {
+  50% {
+    transform: scale(1.12);
+  }
+}
+@keyframes target-pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+@keyframes companion-breathe {
+  50% {
+    transform: translateY(-2px) rotate(1deg);
+  }
+}
+@keyframes wave {
+  50% {
+    transform: translateY(-5px) rotate(-8deg);
+  }
+}
+@keyframes bloom {
+  from {
+    opacity: 0;
+    transform: scale(0.45);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 .map-legend {
   display: flex;
   align-items: center;
@@ -313,6 +431,81 @@ footer {
   font-size: 11px;
   padding-bottom: 14px;
   border-bottom: 1px solid var(--line);
+}
+.companion-card {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  margin: 15px 0;
+  padding: 10px;
+  background: #eef0e7;
+  border-left: 3px solid #a8a2ba;
+  color: #63736b;
+  font-size: 11px;
+}
+.companion-card strong {
+  color: var(--ink);
+  font-size: 12px;
+}
+.companion-card p {
+  line-height: 1.45;
+}
+.preset-section {
+  margin: 13px 0;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+.preset-list {
+  display: grid;
+  gap: 6px;
+  margin: 8px 0;
+}
+.preset {
+  text-align: left;
+  padding: 9px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.preset-diagram {
+  width: 66px;
+  height: 66px;
+  display: grid;
+  grid-template-columns: repeat(3, 22px);
+  grid-template-rows: repeat(3, 22px);
+  place-items: center;
+  flex: 0 0 66px;
+  background: #eef0e7;
+  border: 1px solid #d1d9cb;
+  border-radius: 5px;
+}
+.preset-diagram > span {
+  grid-column: 2;
+  grid-row: 2;
+}
+.preset-module,
+.preset-core {
+  display: grid;
+  place-items: center;
+}
+.preset strong,
+.preset small {
+  display: block;
+}
+.preset small {
+  color: #71806b;
+  font-size: 10px;
+  margin-top: 2px;
+}
+.preset-confirm {
+  width: 100%;
+  padding: 10px !important;
+  font-size: 12px;
+}
+.free-editor {
+  display: block;
+  margin: 5px auto 0;
+  font-size: 11px;
 }
 .controls {
   display: flex;
@@ -779,6 +972,28 @@ kbd {
   .editor {
     max-width: 350px;
     margin: auto;
+  }
+}
+@media (max-height: 720px) and (min-width: 701px) {
+  .game-screen {
+    padding-top: 10px;
+    padding-bottom: 0;
+  }
+  .room-heading {
+    margin-bottom: 10px;
+  }
+  .board {
+    height: 300px;
+    min-height: 220px;
+  }
+  .map-legend {
+    margin: 7px -5px;
+  }
+  .controls {
+    margin: 8px 0;
+  }
+  .hint-box {
+    margin-top: 7px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
