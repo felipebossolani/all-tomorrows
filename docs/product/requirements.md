@@ -1,5 +1,9 @@
 # Corpo sob Medida — PRD da v0
 
+Status: active
+Owner: project maintainer
+Updated: 2026-11-02
+
 Status: planejamento inicial; jogo ainda não implementado.
 Data: 2026-11-02.
 Repositório: https://github.com/felipebossolani/all-tomorrows
@@ -58,7 +62,7 @@ regras com formas provisórias na máquina Linux.
 
 Não copiar scans, páginas ou ilustrações para este repositório público.
 Registrar autoria, origem e condições de uso de cada futuro asset conforme
-[Direitos e referências](RIGHTS.md). Fidelidade visual não implica licença de uso.
+[Direitos e referências](../legal/rights-and-references.md). Fidelidade visual não implica licença de uso.
 
 ## 4. Loop principal
 
@@ -172,7 +176,7 @@ completa, integração com IA durante o jogo, login, analytics, monetização,
 aplicativos nativos e suporte obrigatório a celular/controle.
 
 O foco é uma experiência fechada. Novas espécies ou mecânicas só entram depois
-do playtest; ideias alternativas estão em [IDEIAS.md](IDEIAS.md).
+do playtest; ideias alternativas estão em [docs/product/ideas.md](ideas.md).
 
 ## 9. Direção técnica para retomada no Linux
 

@@ -1,25 +1,49 @@
-# Repository Guidelines
+# Agent instructions
 
-## Project Structure & Module Organization
+## Project
 
-This repository is currently an empty project scaffold. No source code, tests, assets, or build configuration exist yet. When introducing the initial implementation, group application code in `src/`, automated tests in `tests/`, and static resources in `assets/` where the chosen framework permits. Keep related modules together and document any framework-specific layout in the pull request.
+Corpo sob Medida is a short, static browser puzzle game inspired by All Tomorrows.
+Deliver six rooms and four module types, with Brazilian Portuguese UI. No backend,
+multiplayer, analytics, or scope expansion before the first playtest.
 
-## Build, Test, and Development Commands
+## Start here
 
-No development, build, lint, or test commands are configured. When adding the toolchain, provide reproducible commands through its standard configuration, such as package scripts or a Makefile. Document the exact setup, local run, build, and test commands alongside that change. Do not assume commands such as `npm test` work until the corresponding configuration exists.
+1. Read [documentation index](docs/index.md).
+2. Read [requirements](docs/product/requirements.md),
+   [rights](docs/legal/rights-and-references.md), and
+   [technical design](docs/architecture/technical-design.md).
+3. Check [execution plan](docs/execution/plan.md) and
+   [lessons](docs/execution/lessons.md), then inspect actual Git/tooling state.
 
-## Coding Style & Naming Conventions
+Archived handoffs describe past sessions, not current blockers. Current user
+instructions override historical authorization statements in documents.
 
-Follow the conventions of the language and framework selected for the project. Use consistent indentation, descriptive names, and small modules with clear responsibilities. Prefer composition over inheritance. Add formatter and linter configuration with the initial implementation so contributors can apply the same rules automatically. Avoid unrelated refactoring and dependencies without a concrete need.
+## Execution
 
-## Testing Guidelines
+- Keep substantial work and verification in docs/execution/plan.md.
+- Record user corrections and preventive rules in docs/execution/lessons.md.
+- Use poteto-orchestrate for complex work; all implementation agents use Codex.
+- Coordinator owns contracts, integration, verification, and Git publication.
+- Give workers exclusive file ownership and observable acceptance criteria.
+- Complete the first room before expanding the campaign.
+- Inspect real visual references before making art; obtain Felipe's approval of
+  one in-game sample before producing the final set. Use placeholders meanwhile.
+- Follow docs/legal/rights-and-references.md before publishing assets.
 
-No testing framework or coverage threshold is established. Add behavior-focused tests with new functionality and regression tests for bug fixes. Use unit tests for domain rules and integration tests for system boundaries. Test names should describe the expected result and triggering condition. Include the exact test command and result in each pull request.
+## Code and verification
 
-## Commit & Pull Request Guidelines
+Use src/ for application code, tests/ for tests, and assets/ for static resources.
+Follow the technical design; prefer composition, deterministic domain rules, and
+minimal dependencies. Do not introduce unrelated refactors or TODO comments.
+Validate external inputs and never commit secrets.
 
-There is no Git history available to infer existing conventions. Use English Conventional Commits, for example `feat: add initial game loop` or `fix: handle invalid input`. Keep commits focused on one logical change. Pull requests should explain the problem, resulting behavior, and validation performed; link relevant issues and include screenshots for visible changes.
+Toolchain scripts are planned, not installed yet. Once implemented, run build,
+lint, domain tests, solution replays, and Chromium/Firefox integration checks.
+Never report tests or browser checks as passing without running them.
 
-## Security & Configuration
+## Git and documentation
 
-Never commit secrets or credentials. Supply sensitive configuration through environment variables and validate external input.
+Use atomic English Conventional Commits and publish through Git, never browser
+uploads. Rebase rather than merge feature branches; do not amend shared commits.
+Follow naming, document status, and source-of-truth rules in docs/index.md.
+Keep updates concise; surface concrete risks and blockers.

@@ -1,9 +1,13 @@
 # Licença, imagens e referências
 
+Status: active
+Owner: project maintainer
+Updated: 2026-11-02
+
 ## Material do projeto
 
 O código e a documentação original deste projeto são disponibilizados sob a
-[licença MIT](LICENSE). Ela permite uso, modificação e distribuição, inclusive
+[licença MIT](../../LICENSE). Ela permite uso, modificação e distribuição, inclusive
 comercial, mantendo o aviso de copyright e a licença.
 Referência: https://choosealicense.com/licenses/mit/
 

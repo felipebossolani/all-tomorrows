@@ -1,5 +1,9 @@
 # Plano de execução — Linux
 
+Status: active
+Owner: project maintainer
+Updated: 2026-11-02
+
 ## Histórico
 
 A preparação documental no Mac foi concluída. Os bloqueios de DNS e de criação de
@@ -10,7 +14,7 @@ remoto apontavam para 6087285; acesso GitHub e npm verificado no Linux.
 
 - [x] Ler documentos obrigatórios e lições.
 - [x] Conferir Git/GitHub e ferramentas Linux.
-- [x] Registrar stack, divisão Codex e correção proposta das regras em TECNICO.md.
+- [x] Registrar stack, divisão Codex e correção proposta das regras em docs/architecture/technical-design.md.
 - [ ] Provisionar toolchain e navegadores; confirmar runtime/modelos dos workers.
 - [ ] Sincronizar PRD e implementar domínio com regra de suporte dos extensores.
 - [ ] Entregar e testar a primeira sala completa com placeholders.
@@ -29,3 +33,10 @@ Planejamento técnico concluído; aplicação ainda não implementada. A grade 3
 permanece, com proposta de módulos funcionais terminais e extensão em cotovelo.
 A solução e a necessidade dessas regras dependem dos testes de layout previstos.
 Falha atual do sandbox bwrap contornada por execução escalada; sem bloqueio GitHub.
+
+## Padronização documental
+
+- [x] Organizar documentos por produto, arquitetura, execução, direitos e histórico.
+- [x] Adotar nomes English kebab-case e índice canônico.
+- [x] Atualizar AGENTS.md, links e lição sobre nomenclatura.
+- [x] Validar links locais: nove documentos, nenhum link quebrado; git diff --check passou.

@@ -1,5 +1,9 @@
 # Retomada no Linux
 
+Status: archived
+Owner: project maintainer
+Updated: 2026-11-02
+
 ## Estado da entrega
 
 Projeto em planejamento. Não há código de jogo, dependências instaladas, build,
@@ -23,8 +27,8 @@ Abra essa pasta no ambiente usado para trabalhar com o agente.
 
 ## Contexto a preservar
 
-Leia [PRD.md](PRD.md) e [RIGHTS.md](RIGHTS.md).
-As alternativas estão em [IDEIAS.md](IDEIAS.md).
+Leia [docs/product/requirements.md](../product/requirements.md) e [docs/legal/rights-and-references.md](../legal/rights-and-references.md).
+As alternativas estão em [docs/product/ideas.md](../product/ideas.md).
 
 - A v0 é uma surpresa pronta antes do primeiro playtest.
 - O jogador passa a colaborar após experimentar a primeira versão.

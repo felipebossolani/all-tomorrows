@@ -1,5 +1,9 @@
 # Corpo sob Medida — plano técnico
 
+Status: draft
+Owner: project maintainer
+Updated: 2026-11-02
+
 Data: 2026-11-02. Entrega desta etapa: arquitetura e divisão de trabalho.
 Implementação autorizada; este documento antecede o código conforme o pedido mais recente.
 
@@ -20,7 +24,7 @@ Sem backend, multiplayer, editor, telemetria ou expansão antes do playtest.
 - O sandbox falhou antes dos comandos com `bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted`.
   As verificações funcionaram com execução escalada autorizada pelo ambiente; não é falha de DNS nem do GitHub.
 - RTK.md, referenciado nas instruções globais, não existe na raiz. Não presumir instruções desse arquivo.
-- Os impedimentos do Mac em tasks/todo.md são históricos.
+- Os impedimentos do Mac em docs/execution/plan.md são históricos.
 
 ## Stack escolhida
 
@@ -170,7 +174,7 @@ Codex gerou os pixels. Código de desenho/SVG pode ser produzido diretamente por
 
 Não copiar scans para o repositório. Aprovação estética não concede licença.
 Assets derivados sem condições de distribuição definidas ficam fora do push público;
-o código e os placeholders podem avançar. RIGHTS.md continua sendo a referência.
+o código e os placeholders podem avançar. docs/legal/rights-and-references.md continua sendo a referência.
 
 ## Review desta etapa
 

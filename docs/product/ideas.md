@@ -1,11 +1,15 @@
 # Banco de ideias
 
+Status: active
+Owner: project maintainer
+Updated: 2026-11-02
+
 Registro das propostas de 2026-11-02. A escolhida é **Corpo sob Medida**, detalhada
-no [PRD](PRD.md). As demais ficam preservadas para projetos futuros, sem compromisso
+no [PRD](requirements.md). As demais ficam preservadas para projetos futuros, sem compromisso
 de implementação e sem ampliar o escopo da v0.
 
 As mecânicas são propostas de adaptação, não descrições canônicas do livro.
-Projetos com personagens ou imagens de All Tomorrows devem observar [RIGHTS.md](RIGHTS.md).
+Projetos com personagens ou imagens de All Tomorrows devem observar [docs/legal/rights-and-references.md](../legal/rights-and-references.md).
 
 | Ideia | Gênero e loop | Recorte inicial | Tamanho relativo |
 | --- | --- | --- | --- |

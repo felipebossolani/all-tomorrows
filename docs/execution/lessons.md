@@ -1,5 +1,9 @@
 # Lições
 
+Status: active
+Owner: project maintainer
+Updated: 2026-11-02
+
 ## 2026-11-02 — Publicação de repositório pelo Git
 
 - Padrão: migrar para upload pelo navegador quando o terminal encontra restrição de rede.
@@ -14,3 +18,9 @@
 - Regra: preservar anatomia, proporções e características reconhecíveis das referências.
   Não trocar por mascotes genéricos nem intensificar horror. Tratar direitos de publicação
   separadamente da direção visual e revisar uma amostra antes do conjunto final.
+
+## 2026-11-02 — Estrutura documental consistente
+
+- Padrão: criar documentos com nomes ad hoc na raiz, misturando produto, desenho técnico e handoff.
+- Correção: padronizar documentação e nomenclaturas como repositórios e harnesses maduros.
+- Regra: seguir docs/index.md; nomes em inglês kebab-case, documentos por responsabilidade, links relativos e estado explícito. Atualizar AGENTS.md ao mudar os pontos de entrada.
