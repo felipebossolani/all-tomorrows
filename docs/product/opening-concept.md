@@ -1,14 +1,13 @@
 # Conceito inicial — Sob a superfície
 
-Status: draft
+Status: active
 Owner: project maintainer
 Updated: 2026-11-02
 
 ## Proposta para avaliação
 
 Uma aventura de descoberta na sequência dos capítulos do livro. Cada espécie
-muda o jeito de atravessar o ambiente. Antes de definir a campanha, testar uma
-única cena: Worms escavando. Star People e Qu aparecem apenas no contexto inicial;
+muda o jeito de atravessar o ambiente. O primeiro teste foi Worms escavando; a etapa atual conecta essa introdução a Titans. Star People e Qu aparecem apenas no contexto inicial;
 não haverá personagens inventados apresentados como personagens da obra.
 
 A amostra está em `/concept.html`. Preserva a campanha atual em `/` e não altera
@@ -16,11 +15,11 @@ seu progresso. É um experimento de movimento, não uma nova versão completa.
 
 ## Primeiro minuto
 
-O jogador já começa no subsolo. Espaço ou o botão Escavar alterna escavação;
+O jogador já começa no subsolo. E ou o botão Escavar alterna escavação;
 setas/WASD movem continuamente. Pelo mouse, clicar no destino ou segurar as setas
 move o corpo; o mesmo botão alterna escavação. Escavar abre um caminho persistente.
 Rochas obrigam a contornar obstáculos; três raízes incentivam exploração. Depois,
-alcançar o abrigo encerra a amostra. R e Reiniciar restauram tudo.
+alcançar o abrigo conclui Worms e permite avançar para Titans. R e Reiniciar restauram tudo.
 
 Não há montagem, inventário, diálogo obrigatório, morte ou relógio. O clique
 indica direção em linha reta, sem navegação automática ao redor das rochas.
@@ -65,3 +64,55 @@ Movimento por requestAnimationFrame, delta limitado e colisão com rochas;
 terreno escavado em células de 20 unidades. Perda de foco interrompe movimento.
 Sem persistência nova. Testes de navegador verificam conclusão e reinício.
 Não reutilizar esse controlador como arquitetura definitiva sem validar o conceito.
+
+## Direção aprovada — introdução e progressão
+
+Felipe jogou a amostra no Orca e pelo Tailscale e confirmou melhora na experiência.
+Em seguida, aprovou a direção de uma campanha que começa como introdução e aumenta
+progressivamente a dificuldade e as possibilidades de jogo. Isso valida a direção
+mecânica; não equivale à aprovação das formas provisórias como arte final.
+
+- Começo: aprender movimento e escavação em segurança, com retorno imediato.
+- Dentro de cada fase: apresentar uma habilidade, permitir experimentar e depois
+  propor uma situação que exige usá-la de maneira um pouco mais elaborada.
+- Entre fases: preservar controles e conhecimentos úteis; introduzir uma habilidade
+  corporal por vez. A troca de espécie não deve reiniciar todo o aprendizado.
+- Aumentar decisões, combinações e possibilidades de percurso antes de exigir
+  reflexos. Evitar usar velocidade, punição ou repetição como única dificuldade.
+- Trechos finais combinam habilidades já ensinadas; não introduzir regra essencial
+  inédita no último desafio. Recuperação rápida e dicas continuam disponíveis.
+
+O recorte autorizado é Worms refinada e Titans completa, com transição entre ambas.
+A seleção provisória da campanha é Worms, Titans, Predators/Prey, Swimmers,
+Flyers e Modular People; referências e viabilidade das habilidades ainda precisam
+ser verificadas antes de fechar cada fase. São capítulos selecionados com saltos
+no tempo, não uma linhagem única. Não ampliar além das seis fases.
+
+## Iteração de duas fases — contrato de interação
+
+E é a tecla fixa da habilidade, indicada no botão e na primeira instrução. Funciona
+mesmo quando outro controle do jogo está focado. Espaço também executa a habilidade
+com foco no cenário; em botões, Espaço e Enter preservam a ativação nativa.
+R reinicia a fase atual. Setas/WASD movem. A transição entre capítulos recebe foco
+para avançar com Enter; o cenário recupera foco ao começar a fase seguinte.
+Todos os comandos continuam disponíveis por mouse, inclusive reinício e transição.
+
+Worms mantém seu percurso e ensina escavação, desvio de rochas e combinação dos dois.
+Titans troca terreno escavável por duas passagens bloqueadas por troncos: aproximar,
+usar força e atravessar. A segunda passagem exige reposicionar o corpo e reconhecer
+o mesmo padrão em outra orientação de percurso. Usar força longe do tronco não o
+remove. Reiniciar restaura ambos os obstáculos. Não há punição, contagem de tempo
+ou progressão artificial para estender a duração.
+
+### Referência de Titans
+
+Texto e ilustração das páginas impressas 28–29 da mesma reprodução de 2006 foram
+examinados. A anatomia observada tem face de origem humana, bochechas largas, olhos
+pequenos, membros maciços e prolongamento do lábio inferior em tromba muscular.
+Não confundir essa tromba com o nariz de um elefante. O livro situa os Titans em
+savanas e descreve manipulação de árvores e madeira. A cena de desobstruir uma
+passagem é uma adaptação de jogo, não um acontecimento narrado pelo autor.
+
+A página ilustrada foi renderizada em `/tmp/titans-reference.png`, fora do Git.
+O jogo usa apenas desenho esquemático provisório; reconhecimento visual e condições
+de distribuição de arte final continuam sendo etapas separadas.

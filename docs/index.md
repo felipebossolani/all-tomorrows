@@ -49,4 +49,4 @@ Requirements and technical design describe the same terminal-module support rule
 This organization borrows common repository/harness conventions; it does not claim
 compliance with a specific external framework.
 
-[Opening concept](product/opening-concept.md) registra a amostra isolada de Worms em `/concept.html`, em avaliação antes de ampliar a campanha.
+[Opening concept](product/opening-concept.md) é a direção atual para `/concept.html`: abertura canônica Worms → Titans com aprendizado progressivo. Substitui a montagem obrigatória para essa nova experiência; a campanha v0.2 em `/` permanece preservada.

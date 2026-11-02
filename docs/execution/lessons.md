@@ -67,3 +67,9 @@ Updated: 2026-11-02
 - Correção: a amostra abriu no Orca, mas o acesso remoto usado anteriormente falhou.
 - Diagnóstico: IP Tailscale respondeu 200; nome MagicDNS foi rejeitado pelo Vite com 403. O link entregue também usava endereço LAN.
 - Regra: testar IP e hostname Tailscale antes de entregar links remotos; configurar hosts explícitos e distinguir teste local de validação no dispositivo do usuário.
+
+## 2026-11-02 — Atalhos precisam ser descobertos e funcionar com foco
+
+- Correção: Felipe não encontrou acionamento de escavação pelo teclado.
+- Diagnóstico: Espaço aparecia só na legenda; com botão focado, o handler devolvia a tecla ao botão, podendo reiniciar ou não executar a habilidade.
+- Regra: mostrar a tecla no botão e na primeira instrução; oferecer E como atalho estável de habilidade em qualquer controle, preservar Enter/Espaço nativos dos botões e testar troca de foco, reinício e transição de fase por teclado.

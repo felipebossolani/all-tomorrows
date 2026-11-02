@@ -2,9 +2,14 @@
 
 ## Project
 
-Corpo sob Medida is a short, static browser puzzle game inspired by All Tomorrows.
-Deliver six rooms and four module types, with Brazilian Portuguese UI. No backend,
-multiplayer, analytics, or scope expansion before the first playtest.
+Corpo sob Medida is a short, static browser game inspired by All Tomorrows.
+The original six-room assembly campaign is preserved at `/`. Current authorized
+work is the canonical-species opening at `/concept.html`: Worms then Titans, with
+progressive learning and complete keyboard/mouse controls. See
+[opening concept](docs/product/opening-concept.md) before changing that experience.
+Expand to the proposed six chapters only after evaluation of the opening.
+Brazilian Portuguese UI; no backend, multiplayer, analytics, or added dependencies
+without a concrete need.
 
 ## Start here
 

@@ -108,7 +108,7 @@ sem erros de página e painel de formas com altura total de 720 px.
 - [x] Documentar proposta curta e critérios de avaliação.
 - [x] Criar cena isolada com movimento contínuo, escavação e controles completos.
 - [x] Validar build, testes e navegador; disponibilizar amostra sem substituir campanha.
-- [ ] Receber avaliação de Felipe antes de expandir espécies ou campanha.
+- [x] Receber avaliação da amostra Worms: Felipe confirmou melhora e autorizou Worms + Titans.
 
 ### Review da amostra inicial
 
@@ -118,3 +118,33 @@ sem erros de página e painel de formas com altura total de 720 px.
 - Build de produção inspecionada em 1280×720: controles visíveis, altura total de 720 px, nenhum erro de página. Captura local em `/tmp/opening-concept-final.png`.
 - Campanha v0.2 preservada. Sem novas dependências de aplicação, persistência ou espécies adicionais. Formas continuam provisórias; arte final fiel e avaliação de diversão permanecem pendentes.
 - Implementação desta amostra feita pelo coordenador Codex; nenhum worker lançado neste recorte delimitado.
+
+### Retorno do playtest e próximo recorte
+
+Felipe confirmou que a amostra funcionou no Orca e via Tailscale e que a experiência
+melhorou. Aprovou introdução simples com aumento gradual de dificuldade e jogabilidade,
+conforme [direção de produto](../product/opening-concept.md).
+
+- [x] Refinar Worms como introdução, com aprendizado contextual e desafio gradual.
+- [x] Verificar referências de Titans e implementar sua habilidade principal.
+- [x] Conectar as duas fases e validar continuidade de controles e aprendizado.
+- [ ] Preparar direção visual das duas espécies e avaliar o recorte antes de ampliar.
+
+### Execução autorizada — Worms e Titans
+
+- [x] Corrigir descoberta e acionamento da habilidade: E global, Espaço no cenário, botões com atalhos visíveis.
+- [x] Refinar instrução contextual de Worms e adicionar transição acessível.
+- [x] Implementar Titans com ação de deslocar obstáculos e dificuldade gradual.
+- [x] Verificar referência visual e limites de adaptação de Titans.
+- [x] Validar os dois capítulos só com teclado e só com mouse, foco, reinício e regressões.
+- [x] Conferir produção pelo Tailscale e preparar commits para publicação pelo Git.
+
+### Review — Worms + Titans e teclado completo
+
+- Worms agora ensina a habilidade com E no botão e na primeira instrução; objetivos acompanham o aprendizado. Titans reutiliza movimento e E, com duas passagens bloqueadas por troncos e conclusão própria.
+- E funciona com foco em outros botões; Espaço no cenário e Enter/Espaço nativos dos botões foram preservados. Reinício e transição limpam entradas e recuperam foco. Setas por mouse param ao soltar, sem passo adicional.
+- Referência original de Titans examinada antes do desenho esquemático; texto distingue capítulos em mundos diferentes de uma evolução direta. Arte final não está aprovada; formas provisórias permanecem.
+- Um executor Codex gpt-5.6-terra/high, solicitado e efetivo confirmados, implementou a cena. Coordenador fez referências, testes independentes e integração final (posição dos troncos fora da passagem, parada do mouse e proporções do placeholder). Executor encerrado, sem recursos pendentes.
+- Build, lint, formatação e 21 testes de domínio aprovados. Navegador: 14 verificações da abertura e 22 da campanha anterior passaram em Chromium e Firefox; incluem as duas fases completas por teclado e por mouse, foco, colisão e reinício.
+- Produção validada por IP e nome Tailscale; referência da captura final local: `/tmp/titans-release.png`. A campanha original e seu progresso permanecem preservados.
+- Próximo aceite: Felipe avaliar o ritmo das duas fases antes de ampliar o elenco/campanha. Diversão e fidelidade visual não são demonstradas pelos testes automatizados.
