@@ -1,11 +1,11 @@
 # Corpo sob Medida — plano técnico
 
-Status: draft
+Status: active
 Owner: project maintainer
 Updated: 2026-11-02
 
-Data: 2026-11-02. Entrega desta etapa: arquitetura e divisão de trabalho.
-Implementação autorizada; este documento antecede o código conforme o pedido mais recente.
+Data: 2026-11-02. Arquitetura implementada na primeira versão jogável.
+As seções de diagnóstico inicial preservam o contexto anterior; resultados atuais ficam no plano de execução.
 
 ## Resultado e limites
 
@@ -28,17 +28,17 @@ Sem backend, multiplayer, editor, telemetria ou expansão antes do playtest.
 
 ## Stack escolhida
 
-| Camada | Escolha | Motivo |
-| --- | --- | --- |
-| Linguagem | TypeScript em modo strict | Contratos de estado e comandos explícitos |
-| Build | Vite, npm e lockfile versionado | Aplicação estática com desenvolvimento e build simples |
-| Apresentação | HTML/CSS e SVG inline | Sala pequena, grade discreta, seleção por mouse e composição visual sem engine |
-| Regras | Funções TypeScript puras | Simulação determinística, replay e testes sem navegador |
-| Testes de domínio | Vitest | Regras, soluções e estados inválidos |
-| Testes de interface | Playwright, Chromium e Firefox | Fluxo completo, teclado, mouse e persistência |
-| Qualidade | ESLint e Prettier | Verificação automática consistente |
-| Persistência | localStorage versionado | Só fases liberadas e preferência de som |
-| Áudio | Web Audio API | Sons opcionais sem biblioteca ou arquivos externos |
+| Camada              | Escolha                         | Motivo                                                                         |
+| ------------------- | ------------------------------- | ------------------------------------------------------------------------------ |
+| Linguagem           | TypeScript em modo strict       | Contratos de estado e comandos explícitos                                      |
+| Build               | Vite, npm e lockfile versionado | Aplicação estática com desenvolvimento e build simples                         |
+| Apresentação        | HTML/CSS e SVG inline           | Sala pequena, grade discreta, seleção por mouse e composição visual sem engine |
+| Regras              | Funções TypeScript puras        | Simulação determinística, replay e testes sem navegador                        |
+| Testes de domínio   | Vitest                          | Regras, soluções e estados inválidos                                           |
+| Testes de interface | Playwright, Chromium e Firefox  | Fluxo completo, teclado, mouse e persistência                                  |
+| Qualidade           | ESLint e Prettier               | Verificação automática consistente                                             |
+| Persistência        | localStorage versionado         | Só fases liberadas e preferência de som                                        |
+| Áudio               | Web Audio API                   | Sons opcionais sem biblioteca ou arquivos externos                             |
 
 Não usar React, engine de física ou biblioteca de estado nesta v0. SVG permite
 substituir as formas provisórias por imagens aprovadas sem alterar as regras.
@@ -57,7 +57,7 @@ Assim, substituir um extensor por um módulo funcional mantém a geometria e adi
 uma função. A grade 3×3 também impede uma cadeia reta núcleo–extensor–garra:
 o segundo módulo estaria fora da grade. Não basta prometer que o layout resolve isso.
 
-Decisão para prototipar: preservar 3×3 e quatro vagas; somente núcleo e extensores
+Decisão implementada e validada: preservar 3×3 e quatro vagas; somente núcleo e extensores
 servem de suporte para outros módulos. Pé, olho e garra são terminais.
 Formalmente, cada módulo funcional deve ter um vizinho ortogonal que seja núcleo ou
 extensor; cada extensor deve estar conectado ao núcleo por uma cadeia de extensores.
@@ -68,9 +68,8 @@ Sem extensor, a garra diagonal fica sem suporte. O alcance adicional ocorre na e
 não numa linha reta. A sala 4 será um acesso em cotovelo que explora essa geometria.
 Isso corrige a utilidade do extensor sem ampliar a grade ou criar alcance invisível.
 
-A decisão ainda exige validação de layout: enumerar montagens legais e estados
-alcançáveis da sala 4, com e sem extensor. Deve existir solução com ele e nenhuma
-sem ele. Uma solução gravada prova possibilidade, mas não necessidade.
+A validação enumerou montagens legais e estados alcançáveis da sala 4: 95 estados
+sem extensor, sem solução; 2.838 com extensor, com solução. Uma solução gravada prova possibilidade, mas não necessidade.
 Se a busca encontrar uma alternativa, corrigir o layout antes de aprovar a sala.
 Sincronizar o PRD com esta regra no primeiro commit de implementação.
 
@@ -109,12 +108,12 @@ e aceite. Também orquestro: criar outro agente só para repassar mensagens aume
 o custo sem remover trabalho. Orca será o mecanismo de supervisão, não outro cérebro.
 Todos os executores serão lançados com agent codex; nenhum worker Claude.
 
-| Responsável | Escopo e arquivos | Entrega observável |
-| --- | --- | --- |
-| Coordenador, esta sessão Codex | Contratos, configuração, documentação, integração e Git | Build integrado e critérios de aceite comprovados |
-| Executor A, Codex | src/domain/, src/levels/ e testes correspondentes | Primeira sala reproduzível, depois seis soluções e provas das restrições |
-| Executor B, Codex | src/ui/, src/platform/ e testes de interface | Montar/jogar/desfazer/reiniciar pelo navegador; depois apresentação e progresso |
-| Revisor Codex, em etapa posterior | Leitura independente, sem editar | Achados reproduzíveis sobre regras, soluções e integração |
+| Responsável                       | Escopo e arquivos                                       | Entrega observável                                                              |
+| --------------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| Coordenador, esta sessão Codex    | Contratos, configuração, documentação, integração e Git | Build integrado e critérios de aceite comprovados                               |
+| Executor A, Codex                 | src/domain/, src/levels/ e testes correspondentes       | Primeira sala reproduzível, depois seis soluções e provas das restrições        |
+| Executor B, Codex                 | src/ui/, src/platform/ e testes de interface            | Montar/jogar/desfazer/reiniciar pelo navegador; depois apresentação e progresso |
+| Revisor Codex, em etapa posterior | Leitura independente, sem editar                        | Achados reproduzíveis sobre regras, soluções e integração                       |
 
 Começar com no máximo dois workers. A e B trabalham em paralelo somente depois de
 fechar os contratos; mudanças nesses contratos voltam ao coordenador. Cada tarefa
@@ -128,7 +127,10 @@ gpt-5.6-sol/medium para ambiguidades e gpt-6-astra/low para revisão independent
 Esses IDs são política local, não disponibilidade comprovada. Não prometer um modelo
 sem recibo de execução. Se indisponível, registrar a exceção e manter trabalho nesta
 sessão Codex até configurar um executor suportado; não migrar para outro fornecedor.
-Nesta etapa documental não foram lançados workers.
+Na implementação foram usados dois executores Codex supervisionados pelo Orca e
+um revisor independente, com arquivos exclusivos na mesma árvore. O guia instalado
+do Orca manda herdar o modelo configurado quando o usuário não especifica um ID;
+essa exceção à política poteto, modelo/esforço efetivos retornaram null (desconhecidos).
 
 ## Ordem de execução e critérios de passagem
 
@@ -166,7 +168,9 @@ contexto separadamente: testes automatizados não demonstram fidelidade ao livro
 O coordenador conduz a pesquisa e a revisão visual. Antes de produzir imagens,
 examinar referências reais dos Modular People; registrar silhueta, anatomia e
 proporções observadas. Não usar descrição textual como substituto dessa inspeção.
-A amostra será revisada por Felipe, sem envolver o filho. Até lá, formas provisórias.
+Felipe dispensou a revisão intermediária e avaliará o conjunto ao final. A amostra
+referenciada é separada da build pública; formas provisórias permanecem enquanto
+não houver condições de publicação definidas para imagens dos personagens.
 
 100% Codex se refere à coordenação e programação. Se a produção de bitmap exigir
 uma ferramenta de geração de imagens, declarar seu uso; não alegar que um modelo

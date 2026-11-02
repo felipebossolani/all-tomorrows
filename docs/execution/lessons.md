@@ -24,3 +24,8 @@ Updated: 2026-11-02
 - Padrão: criar documentos com nomes ad hoc na raiz, misturando produto, desenho técnico e handoff.
 - Correção: padronizar documentação e nomenclaturas como repositórios e harnesses maduros.
 - Regra: seguir docs/index.md; nomes em inglês kebab-case, documentos por responsabilidade, links relativos e estado explícito. Atualizar AGENTS.md ao mudar os pontos de entrada.
+
+## 2026-11-02 — Avaliação do conjunto
+
+- Correção: Felipe autorizou seguir criativamente até o final e avaliar o conjunto depois.
+- Regra: não bloquear a implementação em revisão visual intermediária; preservar fidelidade e condições de publicação dos assets.

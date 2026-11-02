@@ -27,7 +27,7 @@ instructions override historical authorization statements in documents.
 - Give workers exclusive file ownership and observable acceptance criteria.
 - Complete the first room before expanding the campaign.
 - Inspect real visual references before making art; obtain Felipe's approval of
-  one in-game sample before producing the final set. Use placeholders meanwhile.
+  the complete visual result at the end, per his latest instruction. Use placeholders while publication rights remain unresolved.
 - Follow docs/legal/rights-and-references.md before publishing assets.
 
 ## Code and verification
@@ -37,7 +37,7 @@ Follow the technical design; prefer composition, deterministic domain rules, and
 minimal dependencies. Do not introduce unrelated refactors or TODO comments.
 Validate external inputs and never commit secrets.
 
-Toolchain scripts are planned, not installed yet. Once implemented, run build,
+Toolchain is installed and locked. Run build,
 lint, domain tests, solution replays, and Chromium/Firefox integration checks.
 Never report tests or browser checks as passing without running them.
 

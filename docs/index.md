@@ -6,15 +6,17 @@ Updated: 2026-11-02
 
 ## Reading order and sources of truth
 
-| Document | Responsibility |
-| --- | --- |
-| [Requirements](product/requirements.md) | Product scope, rules, acceptance criteria |
-| [Technical design](architecture/technical-design.md) | Stack, architecture, proposed rule changes, Codex responsibilities |
-| [Execution plan](execution/plan.md) | Current work, checklists, verification and delivery status |
-| [Lessons](execution/lessons.md) | Corrections and rules preventing recurrence |
-| [Rights and references](legal/rights-and-references.md) | Attribution and conditions for asset publication |
-| [Ideas](product/ideas.md) | Backlog outside the committed release scope |
-| [Linux handoff](archive/linux-handoff.md) | Historical context only |
+| Document                                                | Responsibility                                                     |
+| ------------------------------------------------------- | ------------------------------------------------------------------ |
+| [Requirements](product/requirements.md)                 | Product scope, rules, acceptance criteria                          |
+| [Technical design](architecture/technical-design.md)    | Stack, architecture, proposed rule changes, Codex responsibilities |
+| [Execution plan](execution/plan.md)                     | Current work, checklists, verification and delivery status         |
+| [Lessons](execution/lessons.md)                         | Corrections and rules preventing recurrence                        |
+| [Rights and references](legal/rights-and-references.md) | Attribution and conditions for asset publication                   |
+| [Development](execution/development.md)                 | Setup, execução e comandos de validação                            |
+| [Visual direction](architecture/visual-direction.md)    | Referências examinadas e limites de publicação                     |
+| [Ideas](product/ideas.md)                               | Backlog outside the committed release scope                        |
+| [Linux handoff](archive/linux-handoff.md)               | Historical context only                                            |
 
 [AGENTS.md](../AGENTS.md) is the agent entry point. [LICENSE](../LICENSE) covers
 original code/documentation; it does not license the book's characters or images.
@@ -40,8 +42,7 @@ original code/documentation; it does not license the book's characters or images
 
 ## Current boundaries
 
-The extensor adjustment in technical-design.md is a proposal pending layout
-validation; requirements.md still describes the baseline. Synchronize requirements
-when that decision is validated. The execution plan owns completion status.
+The extensor adjustment is implemented and validated by exhaustive state search.
+Requirements and technical design describe the same terminal-module support rule. The execution plan owns completion status.
 This organization borrows common repository/harness conventions; it does not claim
 compliance with a specific external framework.

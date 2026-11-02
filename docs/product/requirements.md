@@ -4,7 +4,7 @@ Status: active
 Owner: project maintainer
 Updated: 2026-11-02
 
-Status: planejamento inicial; jogo ainda não implementado.
+Implementação: primeira versão jogável com seis salas; veja o plano de execução para validação e pendências visuais.
 Data: 2026-11-02.
 Repositório: https://github.com/felipebossolani/all-tomorrows
 Responsável: Felipe Bossolani.
@@ -56,7 +56,7 @@ módulos e linguagem de ilustração, sem adicionar deformações ou horror.
 
 Antes de produzir o conjunto de imagens, selecionar referências dos Modular People
 e preparar uma única amostra em contexto de jogo para revisão de Felipe.
-Essa revisão não envolve o jogador e preserva a surpresa.
+Atualização de Felipe em 2026-11-02: avaliar o conjunto ao final; a revisão intermediária não bloqueia o trabalho. Isso não altera as condições de publicação de assets.
 A falta de aprovação visual impede finalizar a arte, mas não impede desenvolver as
 regras com formas provisórias na máquina Linux.
 
@@ -94,6 +94,7 @@ Sem pontuação, moedas, árvore de habilidades ou progressão artificial.
 - Um núcleo fixo e uma área de montagem de 3 × 3 células centrada nele.
 - No máximo quatro módulos adicionais no corpo, além do núcleo.
 - Peças conectadas por lados; conexão apenas diagonal é inválida.
+- Somente núcleo e extensores suportam outros módulos. Pé, garra e olho são terminais: precisam tocar o núcleo ou um extensor conectado ao núcleo. Extensores podem formar cadeias entre si. Contatos adicionais entre módulos funcionais são permitidos, mas não servem de suporte.
 - A fase oferece um estoque limitado e explícito de peças, que pode ter repetições.
 - Montagem inicial e mudanças somente em estações sinalizadas no mapa.
 - O núcleo deve estar sobre a estação para entrar no modo de montagem.
@@ -105,12 +106,12 @@ Sem pontuação, moedas, árvore de habilidades ou progressão artificial.
 
 ### Quatro tipos de módulo
 
-| Módulo | Função | Limite e custo |
-| --- | --- | --- |
-| Pé | Permite mover o corpo inteiro. | Ocupa uma célula; pés extras não aumentam velocidade. |
-| Garra | Pega e entrega a semente em célula ortogonalmente adjacente à garra. | Só uma semente por corpo; o objeto carregado não ocupa célula extra. |
-| Olho | Revela o símbolo dos interruptores ocultos da sala enquanto equipado. | O mecanismo oculto não pode ser acionado sem olho. |
-| Extensor | Acrescenta uma célula de conexão para posicionar outro módulo mais longe do núcleo. | Não age sozinho; consome espaço e uma das quatro vagas. |
+| Módulo   | Função                                                                              | Limite e custo                                                       |
+| -------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| Pé       | Permite mover o corpo inteiro.                                                      | Ocupa uma célula; pés extras não aumentam velocidade.                |
+| Garra    | Pega e entrega a semente em célula ortogonalmente adjacente à garra.                | Só uma semente por corpo; o objeto carregado não ocupa célula extra. |
+| Olho     | Revela o símbolo dos interruptores ocultos da sala enquanto equipado.               | O mecanismo oculto não pode ser acionado sem olho.                   |
+| Extensor | Acrescenta uma célula de conexão para posicionar outro módulo mais longe do núcleo. | Não age sozinho; consome espaço e uma das quatro vagas.              |
 
 A garra também aciona interruptores adjacentes. Não há alcance através de paredes.
 Ao carregar a semente, continua podendo acionar mecanismos; a função não é bloqueada
@@ -133,14 +134,14 @@ Mecanismos ocultos têm uma marca visível de “precisa de olho”, evitando ad
 Os layouts exatos serão construídos e validados no Linux. Esta tabela define a
 intenção de cada sala, não afirma que já existe solução verificada.
 
-| Sala | Aprendizado | Desafio e restrição de design |
-| --- | --- | --- |
-| 1. Primeiros passos | Movimento, pegar e entregar. | Pé e garra; caminho aberto, instruções contextuais e vitória rápida. |
-| 2. Cabe ou não cabe? | Forma do corpo afeta colisão. | Passagem estreita exige reorganizar pé e garra numa linha; sem novo módulo. |
-| 3. O que o olho vê | Observar e abrir portas. | Introduz olho; interruptor identificado e acionado pela garra libera a semente. |
-| 4. Um pouco mais longe | Posicionar a garra com extensor. | Núcleo precisa permanecer do lado de fora de um acesso estreito; o braço entra pelo espaço livre até o interruptor. |
-| 5. Mudar no caminho | Reconfigurar após abrir um percurso. | Duas estações; abrir porta com olho e depois reorganizar para atravessar passagem estreita. |
-| 6. Um corpo para cada problema | Combinar conhecimentos. | Usar quatro módulos, abrir passagem, reconfigurar e entregar semente; nenhuma regra nova. |
+| Sala                           | Aprendizado                          | Desafio e restrição de design                                                                                       |
+| ------------------------------ | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| 1. Primeiros passos            | Movimento, pegar e entregar.         | Pé e garra; caminho aberto, instruções contextuais e vitória rápida.                                                |
+| 2. Cabe ou não cabe?           | Forma do corpo afeta colisão.        | Passagem estreita exige reorganizar pé e garra numa linha; sem novo módulo.                                         |
+| 3. O que o olho vê             | Observar e abrir portas.             | Introduz olho; interruptor identificado e acionado pela garra libera a semente.                                     |
+| 4. Um pouco mais longe         | Posicionar a garra com extensor.     | Acesso em cotovelo exige garra diagonal apoiada por extensor; busca exaustiva comprova ausência de solução sem ele. |
+| 5. Mudar no caminho            | Reconfigurar após abrir um percurso. | Duas estações; abrir porta com olho e depois reorganizar para atravessar passagem estreita.                         |
+| 6. Um corpo para cada problema | Combinar conhecimentos.              | Usar quatro módulos, abrir passagem, reconfigurar e entregar semente; nenhuma regra nova.                           |
 
 Cada fase deve ter uma sequência de solução registrada e reproduzível.
 A sala 4 precisa comprovar que exige extensor, e não apenas aproximar o corpo.
@@ -257,4 +258,4 @@ Marco de entrega ao jogador: seis salas acabadas, não um protótipo sem encerra
 - Validar layouts e dificuldade; tamanhos e tempo de sessão são hipóteses iniciais.
 
 A idade do jogador pode ajudar a calibrar textos posteriormente, mas não bloqueia
-o início técnico. Nenhuma implementação ou geração de imagens foi autorizada nesta etapa.
+o início técnico. A implementação e a produção de conceito visual foram autorizadas posteriormente por Felipe; a publicação de imagens continua sujeita a RIGHTS (docs/legal/rights-and-references.md).

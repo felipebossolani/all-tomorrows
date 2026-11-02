@@ -51,3 +51,10 @@ Formas provisórias de desenvolvimento podem ser usadas até essa definição.
 - [Contexto editorial e resumo](https://en.wikipedia.org/wiki/All_Tomorrows).
 
 Os links são referências de pesquisa, não concessões de licença.
+
+## Recursos da primeira versão jogável
+
+- `src/ui/art.ts`: ícones e formas abstratas originais produzidos em código por Codex, sob MIT. Não representam arte final fiel dos personagens.
+- `src/ui/style.css`: apresentação original em CSS, sob MIT; fontes de sistema, sem downloads externos.
+- Áudio: tons sintetizados por `src/platform/audio.ts`, sem gravações de terceiros.
+- Referência visual consultada e conceito gerado: mantidos fora do Git e de dist/. Nenhuma licença de distribuição de personagens foi presumida.
