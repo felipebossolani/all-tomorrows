@@ -7,6 +7,8 @@ Updated: 2026-11-02
 Data: 2026-11-02. Arquitetura implementada na primeira versão jogável.
 As seções de diagnóstico inicial preservam o contexto anterior; resultados atuais ficam no plano de execução.
 
+A revisão [v0.2](cooperative-redesign.md) substitui a introdução e a campanha de entregas repetidas após o primeiro playtest; os contratos adicionais preservam o motor determinístico.
+
 ## Resultado e limites
 
 Seis salas, quatro módulos, montagem, puzzles, dicas e final; português brasileiro,

@@ -21,6 +21,8 @@ Updated: 2026-11-02
 [AGENTS.md](../AGENTS.md) is the agent entry point. [LICENSE](../LICENSE) covers
 original code/documentation; it does not license the book's characters or images.
 
+[Cooperative redesign](architecture/cooperative-redesign.md) records the v0.2 playtest response and supersedes the original onboarding/campaign direction.
+
 ## Naming and structure
 
 - Root contains repository entry points and conventional files such as AGENTS.md

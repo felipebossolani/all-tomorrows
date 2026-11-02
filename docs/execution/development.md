@@ -31,3 +31,12 @@ Publicar somente dist/ em um host estático. Caminhos do Vite são relativos par
 permitir hospedagem em subdiretórios. O progresso fica no navegador e não é enviado.
 Os ícones geométricos da primeira versão jogável são provisórios. Referências e
 conceitos derivados permanecem fora da distribuição pública até definição de direitos.
+
+## Controles da v0.2
+
+- Comece com **Nova jornada** para experimentar a nova introdução. Continuar preserva salas liberadas na v0.1.
+- Setas/WASD movem; E/espaço interage; M abre formas na estação; 1/2 selecionam; Enter confirma; Escape cancela; Z desfaz; R reinicia.
+- Tab/Enter alcançam os controles e o editor livre. Todos os comandos também têm botões para jogar somente com mouse.
+- Formas prontas mostram posições reais das peças. Editar cada peça é opcional.
+- Missões: A caixa no canteiro, A passagem de Nara, Luz para o abrigo, A ponte dobrada, Turno na estufa e Rota do jardim comum.
+- Objetivos e histórias são adaptações originais sobre cooperação; não episódios canônicos de All Tomorrows.

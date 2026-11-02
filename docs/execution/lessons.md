@@ -29,3 +29,14 @@ Updated: 2026-11-02
 
 - Correção: Felipe autorizou seguir criativamente até o final e avaliar o conjunto depois.
 - Regra: não bloquear a implementação em revisão visual intermediária; preservar fidelidade e condições de publicação dos assets.
+
+## 2026-11-02 — Aprendizado e controles completos
+
+- Feedback de Felipe: a primeira fase exige montagem sem explicar seu propósito e termina sem recompensa interessante; alternar mouse e teclado prejudica a experiência. A paleta e o layout foram bem recebidos.
+- Regra: ensinar a utilidade de mudar o corpo antes de exigir montagem livre; validar uma primeira fase revisada antes de aplicar mudanças à campanha. Discutir propostas antes de alterar o jogo.
+- Requisito confirmado: teclado resolve o jogo inteiro e mouse também oferece comandos completos, incluindo movimento, interação, montagem, desfazer, reiniciar e navegação. Nenhum fluxo deve exigir alternância entre os dois.
+
+## 2026-11-02 — Inspiração precisa aparecer na experiência
+
+- Padrão: uma mecânica abstrata de montagem e o nome da obra não bastam para um fã reconhecer a inspiração.
+- Regra: expressar cooperação, unidades especializadas e transformação do corpo nas situações, reações e objetivos; separar explicitamente cenas originais de fatos do livro. Não tentar resolver ausência de propósito só com arte.

@@ -9,6 +9,24 @@ Data: 2026-11-02.
 Repositório: https://github.com/felipebossolani/all-tomorrows
 Responsável: Felipe Bossolani.
 
+## Atualização após o primeiro playtest — v0.2
+
+Esta seção substitui as descrições antigas de onboarding e campanha abaixo onde
+houver conflito. O desenho completo da revisão está em
+[Cooperação e descoberta](../architecture/cooperative-redesign.md).
+
+- Começar com corpo montado e móvel; a primeira ação não exige editar uma grade.
+- Apresentar a necessidade da transformação no cenário antes de pedir montagem.
+- Oferecer formas prontas com prévia e função explícita; montagem livre é opcional.
+- Seis situações originais de cooperação, incluindo entrega, ativação e chegada.
+- Companheiros, reações e desfechos distintos dão consequência às ações.
+- Teclado sozinho e mouse sozinho devem resolver toda a campanha, sem alternância.
+- Preservar paleta e layout aprovados; acrescentar movimento com propósito e
+  respeitar movimento reduzido. Animação nunca bloqueia a lógica.
+- Manter seis salas, quatro módulos e ausência de combate, cronômetro e backend.
+- A avaliação visual é do conjunto ao final. Direitos dos personagens permanecem
+  separados; não confundir arte original abstrata com reprodução canônica.
+
 ## 1. Objetivo e hipótese
 
 Criar um pequeno puzzle 2D sobre montar e reorganizar uma criatura modular para
